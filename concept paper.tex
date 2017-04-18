@@ -1,0 +1,105 @@
+\documentclass[10pt]{article}
+\usepackage{makeidx}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[dvipsnames,svgnames,table]{xcolor}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\author{Admin}
+\title{}
+\usepackage[paperwidth=612pt,paperheight=792pt,top=72pt,right=72pt,bottom=72pt,left=72pt]{geometry}
+
+\makeatletter
+	\newenvironment{indentation}[3]%
+	{\par\setlength{\parindent}{#3}
+	\setlength{\leftmargin}{#1}       \setlength{\rightmargin}{#2}%
+	\advance\linewidth -\leftmargin       \advance\linewidth -\rightmargin%
+	\advance\@totalleftmargin\leftmargin  \@setpar{{\@@par}}%
+	\parshape 1\@totalleftmargin \linewidth\ignorespaces}{\par}%
+\makeatother 
+
+% new LaTeX commands
+
+
+\begin{document}
+
+
+\begin{center}
+{\large A CONCEPT PAPER FOR CHECKING PROBABILISTIC DENIABILITY}
+\end{center}
+
+{\raggedright
+\textbf{Abstract}
+\\
+we use the probabilistic deniability to analyze the Crowds system for anonymous
+Web browsing. This case study demonstrates how probabilistic deniability
+techniques can be used to formally analyze security properties of a peer-to-peer
+group communication system based on random message routing among members. The
+behavior of group members and the adversary is modeled as a discrete-time Markov
+chain, and the desired security properties are expressed as PCTL formulas.{\large
+ } \textbf{Our main result is a demonstration of}\textbf{ }\textbf{how certain
+forms of probabilistic anonymity degrade when group size increases or random
+routing paths are rebuilt, assuming that the corrupt group}\textbf{
+}\textbf{members are able to identify and/or correlate multiple routing paths
+originating from the same sender.}
+}
+
+\begin{enumerate}
+	\item \textbf{Introduction}
+\\
+Formal analysis of security protocols is a well-established field. Model
+checking{\large  }and theorem proving techniques have been extensively used to
+analyze secrecy, authentication and other security properties systems that employ
+cryptographic primitives such as public-key encryption, digital signatures, etc.
+Conventional formal analysis of security is mainly concerned with security{\large
+ }against the so called \textit{Dolev-Yao attacks}.{\large  }Many proposed
+systems for anonymous communication aim to provide strong,
+\\
+non-probabilistic anonymity guarantees. Non-probabilistic anonymity systems are
+amenable to formal analysis in the same non-deterministic Dolev-Yao model as used
+for verification of secrecy and authentication protocols.{\large  }In this
+project, we use \textit{probabilistic }model checking to analyze anonymity
+properties of a gossip-based system. Such systems fundamentally rely on
+probabilistic
+\\
+message routing to guarantee anonymity. The first flaw was identified by the
+authors of
+\\
+Crowds [RR98] and analyzed by Makhi [Mal01] and{\large  }Wright \textit{et al.
+}[WALS02].{\large  }Previous research on probabilistic formal models for security
+focused on
+\end{enumerate}
+
+{\raggedright
+(i){\large  }Probabilistic characterization of non-interference, and
+}
+
+{\raggedright
+(ii){\large  }Process formalisms that aim to faithfully model probabilistic
+properties of cryptographic primitives. This paper attempts to directly model
+and{\large  }analyze security properties based on discrete probabilities, as
+opposed to asymptotic probabilities in the conventional cryptographic sense. Our
+analysis method{\large  }is applicable to other probabilistic anonymity systems
+such as free net{\large  }and onion routing.
+}
+
+\begin{enumerate}
+	\item \textbf{{\large Problem statement}}
+\end{enumerate}
+
+{\raggedright
+{\large The problem this project will tackle is to maintain the privacy of
+communicated data against passive eavesdroppers (A secret listener to private
+conversations). The key solution to the problem is by constructing a
+sender-deniable public key encryption scheme based on any trapdoor permutation.
+However, our scheme falls short of achieving the desired level of deniability. }
+}
+{\large  }
+\textbf{Word-to-LaTeX TRIAL VERSION LIMITATION:}\textit{ A few characters will be randomly misplaced in every paragraph starting from here.}
+
+
+\end{document}
