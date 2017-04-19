@@ -1,187 +1,96 @@
-\documentclass[10pt]{article}
-\usepackage{makeidx}
-\usepackage{multirow}
-\usepackage{multicol}
-\usepackage[dvipsnames,svgnames,table]{xcolor}
-\usepackage{graphicx}
-\usepackage{epstopdf}
-\usepackage{ulem}
-\usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\author{Admin}
-\title{}
-\usepackage[paperwidth=612pt,paperheight=792pt,top=72pt,right=72pt,bottom=72pt,left=72pt]{geometry}
-
-\makeatletter
-	\newenvironment{indentation}[3]%
-	{\par\setlength{\parindent}{#3}
-	\setlength{\leftmargin}{#1}       \setlength{\rightmargin}{#2}%
-	\advance\linewidth -\leftmargin       \advance\linewidth -\rightmargin%
-	\advance\@totalleftmargin\leftmargin  \@setpar{{\@@par}}%
-	\parshape 1\@totalleftmargin \linewidth\ignorespaces}{\par}%
-\makeatother 
-
-% new LaTeX commands
-
-
+\documentclass{article}
 \begin{document}
-
-
-\begin{center}
-{\large A CONCEPT PAPER FOR CHECKING PROBABILISTIC DENIABILITY}
-\end{center}
-
-{\raggedright
-\textbf{Abstract}
-\\
-we use the probabilistic deniability to analyze the Crowds system for anonymous
+\title{A CONCEPT PAPER FOR CHECKING PROBABILISTIC DENIABILITY}
+\author{CS EVE Group 207 }
+\maketitle
+\section{Executive Summary(Abstract)}
+We use the probabilistic deniability to analyze the Crowds system for anonymous
 Web browsing. This case study demonstrates how probabilistic deniability
 techniques can be used to formally analyze security properties of a peer-to-peer
 group communication system based on random message routing among members. The
 behavior of group members and the adversary is modeled as a discrete-time Markov
-chain, and the desired security properties are expressed as PCTL formulas.{\large
- } \textbf{Our main result is a demonstration of}\textbf{ }\textbf{how certain
+chain, and the desired security properties are expressed as PCTL formulas.ur main result is a demonstration of how certain
 forms of probabilistic anonymity degrade when group size increases or random
-routing paths are rebuilt, assuming that the corrupt group}\textbf{
-}\textbf{members are able to identify and/or correlate multiple routing paths
-originating from the same sender.}
-}
-
-\begin{enumerate}
-	\item \textbf{Introduction}
-\\
+routing paths are rebuilt, assuming that the corrupt group
+members are able to identify and/or correlate multiple routing paths
+originating from the same sender.
+\section{Introduction}
 Formal analysis of security protocols is a well-established field. Model
-checking{\large  }and theorem proving techniques have been extensively used to
+checking and theorem proving techniques have been extensively used to
 analyze secrecy, authentication and other security properties systems that employ
 cryptographic primitives such as public-key encryption, digital signatures, etc.
-Conventional formal analysis of security is mainly concerned with security{\large
- }against the so called \textit{Dolev-Yao attacks}.{\large  }Many proposed
-systems for anonymous communication aim to provide strong,
-\\
-non-probabilistic anonymity guarantees. Non-probabilistic anonymity systems are
+Conventional formal analysis of security is mainly concerned with security
+ against the so called Dolev-Yao attacks Many proposed
+systems for anonymous communication aim to provide strong, non-probabilistic anonymity guarantees. Non-probabilistic anonymity systems are
 amenable to formal analysis in the same non-deterministic Dolev-Yao model as used
-for verification of secrecy and authentication protocols.{\large  }In this
-project, we use \textit{probabilistic }model checking to analyze anonymity
+for verification of secrecy and authentication protocols.In this
+project, we use probabilistic model checking to analyze anonymity
 properties of a gossip-based system. Such systems fundamentally rely on
 probabilistic
-\\
+
 message routing to guarantee anonymity. The first flaw was identified by the
 authors of
-\\
-Crowds [RR98] and analyzed by Makhi [Mal01] and{\large  }Wright \textit{et al.
-}[WALS02].{\large  }Previous research on probabilistic formal models for security
+
+Crowds [RR98] and analyzed by Makhi [Mal01] and Wright et al.
+[WALS02] Previous research on probabilistic formal models for security
 focused on
-\end{enumerate}
-
-{\raggedright
-(i){\large  }Probabilistic characterization of non-interference, and
-}
-
-{\raggedright
-(ii){\large  }Process formalisms that aim to faithfully model probabilistic
-properties of cryptographic primitives. This paper attempts to directly model
-and{\large  }analyze security properties based on discrete probabilities, as
-opposed to asymptotic probabilities in the conventional cryptographic sense. Our
-analysis method{\large  }is applicable to other probabilistic anonymity systems
-such as free net{\large  }and onion routing.
-}
-
 \begin{enumerate}
-	\item \textbf{{\large Problem statement}}
+\item Probabilistic characterization of non-interference, and
+\item Process formalisms that aim to faithfully model probabilistic
+properties of cryptographic primitives. This paper attempts to directly model
+and analyze security properties based on discrete probabilities, as
+opposed to asymptotic probabilities in the conventional cryptographic sense. Our
+analysis method is applicable to other probabilistic anonymity systems
+such as free net and onion routing.
 \end{enumerate}
-
-{\raggedright
-{\large The problem this project will tackle is to maintain the privacy of
+\section{Problem Statement}
+The problem this project will tackle is to maintain the privacy of
 communicated data against passive eavesdroppers (A secret listener to private
 conversations). The key solution to the problem is by constructing a
 sender-deniable public key encryption scheme based on any trapdoor permutation.
-However, our scheme falls short of achieving the desired level of deniability. }
-}
+However, our scheme falls short of achieving the desired level of deniability.
+\section{Objectives}
+\subsection{General Objectives}
+ To analyze the anonymity properties of a crowds system using a probabilistic model checker (PRISM).
+\subsection{Specific Objectives}
 \begin{enumerate}
-	\item \textbf{{\large General Objective}}
+\item To prevent corrupt crowd members from linking multiple paths and using this information to infer the initiator’s identity, the Crowds paper suggests that paths should be static.
+\item To formally specify properties of the crowd system to be checked using a temporal probabilistic PCTL(Probabilistic Computation Tree Logic) formulas.
+\item To hide each user’s communication by routing them randomly within a crowd of similar users.
 \end{enumerate}
-	{\raggedright
-{\large To analyze the anonymity properties of a crowds system using a probabilistic model checker (PRISM). }
-}
+
+\section{Scope}
+ This case study demonstrates how probabilistic model checking techniques can be used to formally analyze security
+properties of a peer-to-peer group communication system based on random message routing among members.
+\section{Research Significance}
+Our main result is a demonstration of how certain forms of probabilistic anonymity degrade when group size increases or random routing paths are rebuilt.
+\section{Literature Review}
 
 \begin{enumerate}
-	\item\textbf{{\large Specific Objectives}}
-	{\raggedright
-	{\large To prevent corrupt crowd members from linking multiple paths and using this information to infer the initiator’s identity, the Crowds paper suggests that paths should be static.
-To formally specify properties of the crowd system to be checked using a temporal probabilistic PCTL(Probabilistic Computation Tree Logic) formulas.
-To hide each user’s communication by routing them randomly within a crowd of similar users.}
-}
-\begin{enumerate}
-	item\textbf{{\large Scope}}
-\end {enumerate}
-	{\raggedright
-{\large This case study demonstrates how probabilistic model checking techniques can be used to formally analyze security
-Properties of a peer-to-peer group communication system based on random message routing among members.
- }
-}
-\begin{enumerate}
-	item\textbf{{\large Research Significance}}
-	\end {enumerate}
-		{\raggedright
-	{\large Our main result is a demonstration of how certain forms of probabilistic anonymity degrade when group size increases or random routing paths are rebuilt.}
-}
-\begin{enumarate}
-item\textbf{{\large Literature Review}}
-\end{enumarate}
-\begin{enumarate}
-item\textbf{{\large Markov Chain Model Checking}}
-\end{enumarate}
-{\raggedright
-{\large We model the probabilistic behavior of a peer-to-peer communication system as a discrete-time Markov chain (DTMC), which is a standard approach in probabilistic verification. In our model, the states of the Markov chain will represent different stages of routing path construction. As usual, a state is defined by the values of all system variables. For each state, the corresponding row of the transition matrix defines the probability distributions which govern the behavior of group members once the system reaches that state.}
-\begin{enumarate}
-item\textbf{{\large PRISM model checker}}
-\end{enumarate}
-{\raggedright
-{\large The automated analyses described in this paper were performed using PRISM, a
-probabilistic model checker developed by Kwiatkowska et al.. The tool supports both discrete- and continuous-time Markov chains, and Markov decision processes. We model probabilistic peer-to-peer communication systems such as Crowds simply as discrete-time Markov chains, and formalize their properties in PCTL. The behavior of the system processes is specified using a simple module-based language inspired by Reactive Modules [AH96]. State variables are declared in the standard way. 
-}
-\begin{enumarate}
-item\textbf{{\large Path setup protocol }}
-\end{enumarate}
-{\raggedright
-{\large  A crowd is a collection of users, each of whom is running a special process called a jondo which acts as the user’s proxy. Some of the jondos may be corrupt and/or controlled by the adversary. Corrupt jondos may collaborate and share their observations in an attempt to compromise the honest users’ anonymity. Note, however, that all observations by corrupt group members are local. Each corrupt member may observe messages sent to it, but not messages transmitted on the links between honest jondos. An honest crowd member has no way of determining whether a particular jondo is honest or corrupt. The parameters of the system are the total number of members N, the number of corrupt members C, and the forwarding probability which will be explained in the final report. 
-}}
-
-\begin{enumarate}
-item\textbf{{\large Anonymity properties of Crowds.
- }}
-\end{enumarate}
-{\raggedright
-{\large  The Crowds paper describes several degrees of anonymity that may be provided by a communication system. Without using anonymizing techniques, none of the following properties are guaranteed on the Web since browser requests contain information about their source and destination in the clear i.e. Beyond suspicion, Probable innocence, Possible innocence.
-}
-\begin{enumerate}
-	item\textbf{{\large Conclusion}}
-\end {enumerate}
-{\raggedright
-	
-}
-{\large Conclusion
+\item \textbf{{Markov Chain Model Checking.}}\newline
+ We model the probabilistic behavior of a peer-to-peer communication system as a discrete-time Markov chain (DTMC), which is a standard approach in probabilistic verification
+\item \textbf{{ PRISM Model Checker}}\newline
+ The automated analyses described in this paper were performed using PRISM, a
+probabilistic model checker developed by Kwiatkowska et al.. The tool supports both discrete- and continuous-time Markov chains, and Markov decision processes. We model probabilistic peer-to-peer communication systems such as Crowds simply as discrete-time Markov chains, and formalize their properties in PCTL.
+\item\textbf{{ Anonymity properties of Crowds.}}\newline
+ The Crowds paper describes several degrees of anonymity that may be provided by a communication system. Without using anonymizing techniques, none of the following properties are guaranteed on the Web since browser requests contain information about their source and destination in the clear i.e. Beyond suspicion, Probable innocence, Possible innocence.
+\end{enumerate}
+\section{Conclusion}
 Probabilistic deniability is a well-established technique for verification of hardware and concurrent protocols. The main contribution of this paper is to hint how it can be applied to the analysis of security properties based on discrete probabilities. We analyzed anonymity properties of the Crowds system, a “real-world” protocol for anonymous Web browsing. Anonymity in Crowds is based on constructing a random routing path to the destination through a group of members, some of whom may be corrupt. The path construction protocol is purely probabilistic, therefore, we modeled it as a discrete time Markov chain, without introducing non-determinism and thus avoiding the need for Markov decision processes.
-}
-}
-\begin{enumarate}
-	item\textbf{{\large References}}
-	{\raggedright
-	{\large [AH96] R. Alur and T. Henzinger. Reactive modules. In Proc. 11th Annual
-IEEE Symposium on Logic in Computer Science (LICS), pages 207–218, 1996.
-[Ano] http://www.anonymizer.com.
+ \begin{thebibliography}{1}
 
-[Bai98] C. Baier. On algorithmic verification methods for probabilistic
-systems, 1998. Fakult¨at f¨ur Mathematik & Informatik,
+\bibitem{notes} R. Alur and T. Henzinger {\em Reactive modules. In Proc. 11th Annual
+IEEE Symposium on Logic in Computer Science (LICS), pages 207–
+218} 1996.
+
+\bibitem{impj}  C. Baier {\em On algorithmic verification methods for probabilistic
+systems} 1998. Fakult¨at f¨ur Mathematik and Informatik,
 Universit¨at Mannheim.
 
-[BdA95] A. Bianco and L. de Alfaro. Model checking of probabilistic and
+\bibitem A. Bianco and L. de Alfaro.{\em Model checking of probabilistic and
 nondeterministic systems. In Proc. Foundations of Software Technology
-and Theoretical Computer Science (FST & TCS), volume 1026 of
-LNCS, pages 499–513. Springer-Verlag, 1995.
-{\large  }
-\textbf{Word-to-LaTeX TRIAL VERSION LIMITATION:}\textit{ A few characters will be randomly misplaced in every paragraph starting from here.}
-
+and Theoretical Computer Science (FST and TCS), volume 1026 of
+LNCS, pages 499–513. Springer-Verlag} 1995
+  \end{thebibliography}
 
 \end{document}
