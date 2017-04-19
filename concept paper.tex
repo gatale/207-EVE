@@ -122,15 +122,45 @@ Properties of a peer-to-peer group communication system based on random message 
 }
 \begin{enumerate}
 	item\textbf{{\large Research Significance}}
+	\end {enumerate}
 		{\raggedright
 	{\large Our main result is a demonstration of how certain forms of probabilistic anonymity degrade when group size increases or random routing paths are rebuilt.}
 }
-\end {enumerate}
-Our main result is a demonstration of how certain forms of probabilistic anonymity degrade when group size increases or random routing paths are rebuilt.
+\begin{enumarate}
+item\textbf{{\large Literature Review}}
+\end{enumarate}
+\begin{enumarate}
+item\textbf{{\large Markov Chain Model Checking}}
+\end{enumarate}
+{\raggedright
+{\large We model the probabilistic behavior of a peer-to-peer communication system as a discrete-time Markov chain (DTMC), which is a standard approach in probabilistic verification. In our model, the states of the Markov chain will represent different stages of routing path construction. As usual, a state is defined by the values of all system variables. For each state, the corresponding row of the transition matrix defines the probability distributions which govern the behavior of group members once the system reaches that state.}
+\begin{enumarate}
+item\textbf{{\large PRISM model checker}}
+\end{enumarate}
+{\raggedright
+{\large The automated analyses described in this paper were performed using PRISM, a
+probabilistic model checker developed by Kwiatkowska et al.. The tool supports both discrete- and continuous-time Markov chains, and Markov decision processes. We model probabilistic peer-to-peer communication systems such as Crowds simply as discrete-time Markov chains, and formalize their properties in PCTL. The behavior of the system processes is specified using a simple module-based language inspired by Reactive Modules [AH96]. State variables are declared in the standard way. 
+}
+\begin{enumarate}
+item\textbf{{\large Path setup protocol }}
+\end{enumarate}
+{\raggedright
+{\large  A crowd is a collection of users, each of whom is running a special process called a jondo which acts as the user’s proxy. Some of the jondos may be corrupt and/or controlled by the adversary. Corrupt jondos may collaborate and share their observations in an attempt to compromise the honest users’ anonymity. Note, however, that all observations by corrupt group members are local. Each corrupt member may observe messages sent to it, but not messages transmitted on the links between honest jondos. An honest crowd member has no way of determining whether a particular jondo is honest or corrupt. The parameters of the system are the total number of members N, the number of corrupt members C, and the forwarding probability which will be explained in the final report. 
+}}
+
+\begin{enumarate}
+item\textbf{{\large Anonymity properties of Crowds.
+ }}
+\end{enumarate}
+{\raggedright
+{\large  The Crowds paper describes several degrees of anonymity that may be provided by a communication system. Without using anonymizing techniques, none of the following properties are guaranteed on the Web since browser requests contain information about their source and destination in the clear i.e. Beyond suspicion, Probable innocence, Possible innocence.
+}
 \begin{enumerate}
 	item\textbf{{\large Conclusion}}
 \end {enumerate}
 {\raggedright
+	{\large }
+}
 {\large Conclusions
 Probabilistic deniability is a well-established technique for verification of hardware and concurrent protocols. The main contribution of this paper is to hint how it can be applied to the analysis of security properties based on discrete probabilities. We analyzed anonymity properties of the Crowds system, a “real-world” protocol for anonymous Web browsing. Anonymity in Crowds is based on constructing a random routing path to the destination through a group of members, some of whom may be corrupt. The path construction protocol is purely probabilistic, therefore, we modeled it as a discrete time Markov chain, without introducing non-determinism and thus avoiding the need for Markov decision processes.
 }
