@@ -105,10 +105,17 @@ However, our scheme falls short of achieving the desired level of deniability. }
 }
 \end{enumerate}
 \begin{enumerate}
+	\item\textbf{{\large Specific Objectives}}
+	{\raggedright
+	{large To prevent corrupt crowd members from linking multiple paths and using this information to infer the initiator’s identity, the Crowds paper suggests that paths should be static.
+To formally specify properties of the crowd system to be checked using a temporal probabilistic PCTL formulas.
+To hide each user’s communication by routing them randomly within a crowd of similar users.}
+}
+\begin{enumerate}
 	item\textbf{{\large Conclusion}}
 \end {enumerate}
 {\raggedright
-{\large 7.	Conclusions
+{\large Conclusions
 Probabilistic deniability is a well-established technique for verification of hardware and concurrent protocols. The main contribution of this paper is to hint how it can be applied to the analysis of security properties based on discrete probabilities. We analyzed anonymity properties of the Crowds system, a “real-world” protocol for anonymous Web browsing. Anonymity in Crowds is based on constructing a random routing path to the destination through a group of members, some of whom may be corrupt. The path construction protocol is purely probabilistic, therefore, we modeled it as a discrete time Markov chain, without introducing non-determinism and thus avoiding the need for Markov decision processes.
 }
 }
